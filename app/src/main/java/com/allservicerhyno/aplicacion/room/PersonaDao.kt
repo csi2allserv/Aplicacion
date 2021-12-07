@@ -13,6 +13,12 @@ interface PersonaDao {
     @UPDATE --> ACTUALIZAR
      */
 
+    @Query("SELECT * FROM personas")
+    fun  findAll():List<Persona>
+
+    @Query("SELECT * FROM personas WHERE id = :idPersona")
+    fun findAllById(idPersona:Long):Persona
+
     @Query("SELECT * FROM personas WHERE  Login = :email and Password = :password")
     fun getUser(email: String, password: String): LiveData<Persona>
     
