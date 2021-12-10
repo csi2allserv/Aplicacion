@@ -9,11 +9,11 @@ import androidx.room.PrimaryKey
 data class Persona(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: Long? = 0,
+    var id: Long? = 0,
     @ColumnInfo(name = "Login")
-    val email: String?,
+    var email: String?,
     @ColumnInfo(name = "Password")
-    val password: String?
+    var password: String?
 )
 {
     override fun toString(): String {

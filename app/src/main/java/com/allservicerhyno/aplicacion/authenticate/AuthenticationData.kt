@@ -10,4 +10,5 @@ class AuthenticationData {
     var jsonrpc: String? = null
     var id: Any? = null
     var result: Result? = null
+
 }

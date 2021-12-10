@@ -37,12 +37,6 @@ class Login : AppCompatActivity() {
         //Check connection with Allser Service
         binding.button.setOnClickListener {
             if (isNetworkAvailable()) {
-                val userInfo = Persona(null, binding.Email.text.toString(), binding.Password.text.toString())
-                lifecycleScope.launch {
-                    withContext(Dispatchers.IO) {
-                        App.getDb().personaDao().insert(userInfo)
-                    }
-                }
                 //Connection with All Service
                 val retrofit = Retrofit.Builder()
                     .baseUrl("https://www.allser.com.co/")
@@ -65,20 +59,22 @@ class Login : AppCompatActivity() {
                 login(repos, retrofit)
             } else {
                 if (binding.Email.text.isEmpty()) {
+                    Toast.makeText(this@Login, "Ingresar Correo Electronico", Toast.LENGTH_SHORT).show()
                     if (binding.Password.text.isEmpty()) {
                         Toast.makeText(this@Login, "Ingresar Contraseña", Toast.LENGTH_SHORT).show()
                     } else {
+                        val password = Persona(null,binding.Email.text.toString(),binding.Password.text.toString())
+                        val updateUser = Persona(null, binding.Email.text.toString(), binding.Password.text.toString())
                         lifecycleScope.launch {
                             withContext(Dispatchers.IO) {
-                                App.getDb().personaDao().getUser(binding.Email.text.toString(), binding.Password.text.toString())
+                                App.getDb().personaDao().getUser(updateUser,password)
                             }
                         }
                         val lanzar = Intent(this, Main::class.java)
                         startActivity(lanzar)
                     }
                 } else {
-                    Toast.makeText(this@Login, "Ingresar Correo Electronico", Toast.LENGTH_SHORT)
-                        .show()
+                    Toast.makeText(this@Login, "Ingresar Correo Electronico", Toast.LENGTH_SHORT).show()
                 }
             }
         }

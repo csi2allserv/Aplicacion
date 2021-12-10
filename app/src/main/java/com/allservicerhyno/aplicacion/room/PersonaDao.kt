@@ -20,7 +20,7 @@ interface PersonaDao {
     fun findAllById(idPersona:Long):Persona
 
     @Query("SELECT * FROM personas WHERE  Login = :email and Password = :password")
-    fun getUser(email: String, password: String): LiveData<Persona>
+    fun getUser(email: Persona, password: Persona): LiveData<Persona>
     
     @Insert
     fun insert (persona: Persona)
