@@ -64,10 +64,10 @@ class Login : AppCompatActivity() {
                         Toast.makeText(this@Login, "Ingresar Contraseña", Toast.LENGTH_SHORT).show()
                     } else {
                         val password = Persona(null,binding.Email.text.toString(),binding.Password.text.toString())
-                        val updateUser = Persona(null, binding.Email.text.toString(), binding.Password.text.toString())
+                        val email = Persona(null, binding.Email.text.toString(), binding.Password.text.toString())
                         lifecycleScope.launch {
                             withContext(Dispatchers.IO) {
-                                App.getDb().personaDao().getUser(updateUser,password)
+                                App.getDb().personaDao().getUser(email,password)
                             }
                         }
                         val lanzar = Intent(this, Main::class.java)
