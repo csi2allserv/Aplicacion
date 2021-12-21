@@ -2,8 +2,16 @@ package com.allservicerhyno.aplicacion.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.allservicerhyno.aplicacion.R
 import com.allservicerhyno.aplicacion.databinding.LoginpreviewBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class Loginpreview : AppCompatActivity() {
     
@@ -15,14 +23,12 @@ class Loginpreview : AppCompatActivity() {
         val root = binding.root
         setContentView(root)
 
-        //Codigo para ingresar a la siguiente pagina despues de
-        // darle al boton de ingresar en el menu de Inicio
-        binding.btnIniciarSesion.setOnClickListener{
-            val lanzar = Intent(this, Login::class.java)
-            startActivity(lanzar)
+        supportActionBar?.hide()
 
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(6000L)
+            startActivity(Intent(this@Loginpreview, Login::class.java))
+            finish()
         }
-       
-        
     }
 }

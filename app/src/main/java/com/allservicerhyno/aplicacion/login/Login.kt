@@ -10,10 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import com.allservicerhyno.aplicacion.authenticate.Authentication
 import com.allservicerhyno.aplicacion.authenticate.AuthenticationData
 import com.allservicerhyno.aplicacion.authenticate.POSTAuthenticate
-import com.allservicerhyno.aplicacion.dashboard.Main
 import com.allservicerhyno.aplicacion.databinding.LoginBinding
 import com.allservicerhyno.aplicacion.room.App
-import com.allservicerhyno.aplicacion.room.Persona
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -63,11 +61,9 @@ class Login : AppCompatActivity() {
                     if (binding.Password.text.isEmpty()) {
                         Toast.makeText(this@Login, "Ingresar Contraseña", Toast.LENGTH_SHORT).show()
                     } else {
-                        val password = Persona(null,binding.Email.text.toString(),binding.Password.text.toString())
-                        val email = Persona(null, binding.Email.text.toString(), binding.Password.text.toString())
                         lifecycleScope.launch {
                             withContext(Dispatchers.IO) {
-                                App.getDb().personaDao().getUser(email,password)
+                                App.getDb().personaDao().getUser(binding.Email.text.toString(),binding.Password.text.toString())
                             }
                         }
                         val lanzar = Intent(this, Main::class.java)
@@ -91,9 +87,7 @@ class Login : AppCompatActivity() {
     private fun isNetworkAvailable(): Boolean {
         val cm = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
         val capabilities = cm.getNetworkCapabilities(cm.activeNetwork)
-
         return (capabilities != null && capabilities.hasCapability(NET_CAPABILITY_INTERNET))
-
     }
 
     //If failed Connection with Login
