@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".dashboard.Main"
-    android:id="@+id/fragment_container">
+    android:background="@color/white">
 
-    <com.ismaeldivita.chipnavigation.ChipNavigationBar
-        android:id="@+id/bottom_nav_menu"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="30dp"
-        android:background="@drawable/corners"
-        android:elevation="8dp"
-        android:minHeight="48dp"
-        app:cnb_menuResource="@menu/bottom_nav_menu"
-        app:cnb_orientationMode="horizontal"
-        app:cnb_radius="8dp"
-        app:cnb_unselectedColor="@color/black" />
+        android:background="#fff"
+        app:titleTextColor="@color/Gray"/>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
 
 
-
-
-
-
-</RelativeLayout>
+</LinearLayout>
