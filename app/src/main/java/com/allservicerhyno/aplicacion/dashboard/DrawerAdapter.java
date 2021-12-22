@@ -67,9 +67,10 @@ public class DrawerAdapter  extends RecyclerView.Adapter<DrawerAdapter.ViewHolde
             return;
 
         }
-        for ( int i = 0;  i<items.size(); i++){
+        for ( int i=0;  i<items.size(); i++){
             DrawerItem item = items.get(i);
             if (item.isChecked()){
+                item.setChecked(false);
                notifyItemChanged(i);
                break;
             }
