@@ -14,13 +14,13 @@ import java.util.Map;
 
 public class DrawerAdapter  extends RecyclerView.Adapter<DrawerAdapter.ViewHolder> {
 
-    private List<DrawerItem> items;
-    private Map<Class<? extends  DrawerItem>, Integer> viewTypes;
-    private SparseArray<DrawerItem>holderFactories;
+    private final List<DrawerItem> items;
+    private final Map<Class<? extends  DrawerItem>, Integer> viewTypes;
+    private final SparseArray<DrawerItem>holderFactories;
 
     private OnItemSelectedListener listener;
 
-    public DrawerAdapter (List<DrawerItem>  items){
+    public DrawerAdapter ( List<DrawerItem>  items){
         this.items = items;
         this.viewTypes = new HashMap<>();
         this.holderFactories = new SparseArray<>();
@@ -41,14 +41,14 @@ public class DrawerAdapter  extends RecyclerView.Adapter<DrawerAdapter.ViewHolde
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ViewHolder holder = holderFactories.get(viewType).createVIewHolder(parent);
+        ViewHolder holder = holderFactories.get(viewType).createViewHolder(parent);
         holder.drawerAdapter = this;
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        items.get(position).bindVIewHolder(holder);
+        items.get(position).bindViewHolder(holder);
     }
 
     @Override

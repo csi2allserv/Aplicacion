@@ -17,7 +17,7 @@ public class SpaceItem  extends DrawerItem<SpaceItem.ViewHolder>{
 
 
     @Override
-    public ViewHolder createVIewHolder(ViewGroup parent) {
+    public ViewHolder createViewHolder(ViewGroup parent) {
         Context c = parent.getContext();
         View view = new View(c);
         int height = (int) (c.getResources().getDisplayMetrics().density*spaceDp);
@@ -30,7 +30,7 @@ public class SpaceItem  extends DrawerItem<SpaceItem.ViewHolder>{
     }
 
     @Override
-    public void bindVIewHolder(ViewHolder holder) {
+    public void bindViewHolder(ViewHolder holder) {
 
     }
 
@@ -39,7 +39,7 @@ public class SpaceItem  extends DrawerItem<SpaceItem.ViewHolder>{
         return false;
     }
 
-    public static class ViewHolder extends DrawerAdapter.ViewHolder{
+    public class ViewHolder extends DrawerAdapter.ViewHolder{
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

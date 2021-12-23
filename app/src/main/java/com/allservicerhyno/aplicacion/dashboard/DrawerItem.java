@@ -5,9 +5,9 @@ import android.view.ViewGroup;
 public abstract class DrawerItem<T extends  DrawerAdapter.ViewHolder> {
 
     protected  boolean isChecked;
-    public abstract  T createVIewHolder(ViewGroup parent);
+    public abstract  T createViewHolder(ViewGroup parent);
 
-    public abstract  void bindVIewHolder(T holder);
+    public abstract  void bindViewHolder(T holder);
     public DrawerItem<T>setChecked(boolean isChecked){
         this.isChecked = isChecked;
         return this;

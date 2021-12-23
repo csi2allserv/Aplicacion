@@ -27,7 +27,7 @@ class Login : AppCompatActivity() {
 
 
     //Init Login
-    lateinit var binding: LoginBinding
+    private lateinit var binding: LoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LoginBinding.inflate(layoutInflater)

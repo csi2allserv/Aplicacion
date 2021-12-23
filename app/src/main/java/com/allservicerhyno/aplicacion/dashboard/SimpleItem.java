@@ -21,8 +21,8 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder>{
     private int normalItemTextTint;
 
 
-    private Drawable icon;
-    private  String tittle;
+    private final Drawable icon;
+    private final String tittle;
 
    public SimpleItem(Drawable icon, String tittle){
        this.icon = icon;
@@ -31,14 +31,14 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder>{
    }
 
     @Override
-    public ViewHolder createVIewHolder(ViewGroup parent) {
+    public ViewHolder createViewHolder(ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.item_option, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
-    public void bindVIewHolder(ViewHolder holder) {
+    public void bindViewHolder(ViewHolder holder) {
 
        holder.tittle.setText(tittle);
        holder.icon.setImageDrawable(icon);
