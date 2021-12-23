@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@color/light_gray"
-    tools:context=".dashboard.Settings">
+    android:gravity="center"
+    tools:context=".dashboard.Notification">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ajustes"
+        android:text="@string/notificaciones"
         android:textColor="#0097A7"
         android:textSize="24sp" />
 
