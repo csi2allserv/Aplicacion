@@ -16,7 +16,7 @@
         android:icon="@drawable/settings"
         android:title="@string/ajustes"/>
 
-    <item android:id="@+id/notifitication"
+    <item android:id="@+id/notification"
         android:icon="@drawable/notification"
         android:title="@string/notificaciones"/>
 
