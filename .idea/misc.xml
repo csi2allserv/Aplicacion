@@ -39,12 +39,13 @@
         <entry key="app/src/main/res/drawable/corners.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/input_field.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/item_selector.xml" value="0.2125" />
+        <entry key="app/src/main/res/drawable/modulos_bg.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/shape.xml" value="0.2125" />
         <entry key="app/src/main/res/layout/account.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/layout/dasboard_fragment.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/drawer_menu.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.19635416666666666" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_my_profile.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/fragment_retailer_dashboard.xml" value="0.22" />

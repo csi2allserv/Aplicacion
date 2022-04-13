@@ -40,16 +40,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="178dp"
-        android:inputType="textEmailAddress"
         android:layout_marginEnd="52dp"
         android:background="@drawable/input_field"
         android:hint="@string/direccion_email"
+        android:inputType="textEmailAddress"
         android:maxLength="30"
-        android:textColorHint="@color/Gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="259dp"
-        android:importantForAutofill="no" />
+        android:textColorHint="@color/Gray" />
 
     <EditText
         android:id="@+id/Password"
@@ -72,8 +68,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Email"
-        app:layout_constraintVertical_bias="0.048"
-        android:importantForAutofill="no" />
+        app:layout_constraintVertical_bias="0.048"/>
 
     <Button
         android:id="@+id/button"
